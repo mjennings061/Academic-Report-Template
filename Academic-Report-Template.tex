@@ -7,11 +7,13 @@
 \usepackage{notoccite} %% Citation numbering
 \usepackage{lscape} %% Landscape table
 \usepackage{caption} %% Adds a newline in the table caption
-
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage[numbered,framed]{matlab-prettifier} % To add code listings from matlab
 \usepackage[export]{adjustbox}
+\usepackage{biblatex}
+
+\addbibresource{references.bib} % Bibliography 
 
 
 %% The paracol package lets you typeset columns of text in parallel
@@ -56,9 +58,6 @@
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 % \AtBeginEnvironment{itemize}{\small}
 
-
-
-
 \definecolor{CommentGreen}{HTML}{228B22}
 
 %% This makes " an escape character to write in matlab editor font
@@ -99,26 +98,23 @@
 }
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% THEMES %%%%%%%%%%#
 
 %% Standard theme options are below, leave blank for B&W / no colours (BoringDefault). Note the theme will be set to default if you enter a non-exsistant theme name.
-\SetTheme{ChillBlue}
+\SetTheme{UUTheme}
 %% ChillBlue
 %% GreenAndGold
 %% WisePurple
 %% PastelRed
+%% UUTheme
 %% BoringDefault (Leave blank / enter anything not found above)
 
-
-\include{references.bib}
 
 %%%%%%%%%% TITLE PAGE INFO %%%%%%%%%%
 \ReportTitle{Academic Report Template}
 \SubTitle{Assignment One}
-\Author{Andrew Simon Wilson - B00111111}
+\Author{Joe Bloggs - B00111111}
 \ReportDate{\today}
 \ModCoord{Dr. John McLecturer}
 
@@ -126,11 +122,9 @@
 
 \MakeReportTitlePage
 
-
 %%%%% CONTENTS %%%%%
 \pagenumbering{roman} % Start roman numbering
 \setcounter{page}{1}
-
 
 %%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
 \name{Andrew Simon Wilson}
@@ -456,13 +450,13 @@ OK, one last example, Table \ref{tab:system_props}:
 Perhaps one of you questions is about code so we could include some code from MATLAB as seen in Listing \ref{List:example_MATLAB}:
 \bigskip
 
-\lstinputlisting[style=Matlab-editor, basicstyle=\color{gray}\ttfamily, label={List:example_MATLAB}, caption={Matlab Transfer Function Verification Code}, linerange={6-20}]{MATLAB/example.m}
+\lstinputlisting[style=Matlab-editor, basicstyle=\color{Black}\ttfamily, label={List:example_MATLAB}, caption={Matlab Transfer Function Verification Code}, linerange={6-20}]{MATLAB/example.m}
 \bigskip
 
 Or we might include the output of our script as seen in Listing \ref{lis:MATLAB_output_example}:
 \bigskip
 
-\lstinputlisting[style=Matlab-editor, basicstyle=\color{gray}\ttfamily, label={lis:MATLAB_output_example}, caption={Code Output - Transfer Function and It's Poles}]{MATLAB/Outputs/MATLAB_output_example.txt}
+\lstinputlisting[style=Matlab-editor, basicstyle=\color{Black}\ttfamily, label={lis:MATLAB_output_example}, caption={Code Output - Transfer Function and It's Poles}]{MATLAB/Outputs/MATLAB_output_example.txt}
 
 \pagebreak
 
@@ -496,6 +490,5 @@ Arduino code is just as easily added, an example is displayed in Listing\ref{lis
 
 \newpage
 \setstretch{1}  % Reduce bibliography line spacing
-\bibliographystyle{IEEETran}
-\bibliography{references.bib}
+\printbibliography
 \end{document}

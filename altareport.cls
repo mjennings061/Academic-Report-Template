@@ -169,6 +169,24 @@
 	\colorlet{body}{LightGrey}
 }
 
+\newcommand{\UUTheme}{
+	\definecolor{SlateGrey}{HTML}{2E2E2E}
+	\definecolor{LightGrey}{HTML}{666666}
+	\definecolor{CoreBlue}{HTML}{041E42}
+	\definecolor{DeepBlue}{HTML}{151F6D}
+	\definecolor{BrightBlue}{HTML}{009FDF}
+	\definecolor{Bronze}{HTML}{E7D192}
+	\definecolor{Black}{HTML}{000000}
+
+	\colorlet{heading}{CoreBlue}
+	\colorlet{headingrule}{CoreBlue}
+	\colorlet{subheading}{DeepBlue}
+	\colorlet{name}{DeepBlue}
+	\colorlet{accent}{BrightBlue}
+	\colorlet{tagline}{BrightBlue}
+	\colorlet{emphasis}{Black}
+	\colorlet{body}{Black}
+}
 
 \newcommand{\BoringDefault}{
 	\definecolor{SlateGrey}{HTML}{2E2E2E}
@@ -192,7 +210,8 @@
 	\ifstrequal{#1}{ChillBlue}{\ChillBlue}{		
 		\ifstrequal{#1}{GreenAndGold}{\GreenAndGold}{
   			\ifstrequal{#1}{PastelRed}{\PastelRed}{
-  				\ifstrequal{#1}{WisePurple}{\WisePurple}{\BoringDefault}
+  				\ifstrequal{#1}{WisePurple}{\WisePurple}{
+  					\ifstrequal{#1}{UUTheme}{\UUTheme}{\BoringDefault}}
 			}
 		}
 	}
