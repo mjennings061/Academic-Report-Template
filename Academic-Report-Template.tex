@@ -7,11 +7,12 @@
 \usepackage{notoccite} %% Citation numbering
 \usepackage{lscape} %% Landscape table
 \usepackage{caption} %% Adds a newline in the table caption
-\usepackage{amssymb}
+\usepackage{amssymb} % Symbolic maths toolbox
 \usepackage{mathtools}
 \usepackage[numbered,framed]{matlab-prettifier} % To add code listings from matlab
 \usepackage[export]{adjustbox}
-\usepackage{biblatex}
+\usepackage{biblatex} % Bibliography
+\usepackage[page,titletoc]{appendix} % Appendix formatting
 
 \addbibresource{references.bib} % Bibliography 
 
@@ -40,7 +41,7 @@
 
 %%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
 %% Change some font sizes, this will override the defaults
-% \renewcommand{\familydefault}{cmr}  % choose your font here
+\renewcommand{\familydefault}{cmr}  % choose your font here
 \renewcommand{\ReportTitleFont}{\Huge\bfseries} %% Title Page - Main Title
 \renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
 \renewcommand{\ReportSectionFont}{\LARGE\bfseries} %% Section Title
@@ -129,6 +130,7 @@
 \setcounter{page}{1}
 
 %%%%%%%%%% YOUR NAME, PROFESSION, PORTRAIT, CONTACT INFO, SOCIAL MEDIA ETC. %%%%%%%%%%
+\section*{Author Details}
 \name{Andrew Simon Wilson}
 \tagline{Undergraduate BEng Mechatronic Engineer, Ulster University}
 
@@ -143,14 +145,9 @@
 % \photoR{3cm}{Images/a-wilson-potrait.jpg}
 % \photoL{3cm}{Yacht_High,Suitcase_High}
 
-
-\section*{Author Details}
 \makeauthordetails
-
-\section*{Co-Author Details}
 \name{Michael Jennings MEng MEng}
 \tagline{PhD Candidate, Ulster University}
-
 \personalinfo{
   \email{mjennings061@gmail.com}
   \linkedin{mjennings061} 
@@ -161,24 +158,25 @@
 %% Table of contents print level -1: part, 0: chapter, 1: section, 2:sub-section, 3:sub-sub-section, etc.
 \setcounter{tocdepth}{2} 
 \tableofcontents %% Prints a list of all sections based on the above command
-%\listoffigures %% Prints a list of all figures in the report
-%\listoftables %% Prints a list of all tables in the report
+\listoffigures %% Prints a list of all figures in the report
+\listoftables %% Prints a list of all tables in the report
+\newpage
+\section*{Acknowledgements}
+I would like to thank all those involved in creating this template. In particular, Andrew Wilson for his in-depth revamp of the format.
 
+\newpage
 
-
+\pagenumbering{arabic} % Start document numbering - roman numbering
 
 %%%%%%%%%% DOCUMENT CONTENT BEGINS HERE %%%%%%%%%%
 
 %%%%% INTRO %%%%%
-\section*{Introduction}
+\section{Introduction}
+This document is designed to help beginner LaTeX users produce a well-structured and concise report, suitable for a final year project of PhD Thesis. 
+
 Here is and example how you cite throughout the document\cite{JenningsWilson2021}, the default bibliography format is IEEE Transactions.
 \newpage
-\pagenumbering{arabic} % Start document numbering - roman numbering
 
-
-
-
-%%%%% COURSEWORK THREE %%%%%
 \section{Simple Figure Example}
 Here is an example of a figure, and how to insert one into your document see below in Figure \ref{fig:Example_Figure_Circuit}:
 \begin{figure}[h]
@@ -187,8 +185,7 @@ Here is an example of a figure, and how to insert one into your document see bel
 	\caption{Circuit One, for reference.}  %% Caption for your figure
 	\label{fig:Example_Figure_Circuit}
 \end{figure}
-
-
+\newpage
 
 
 \section{Equations}
@@ -246,7 +243,7 @@ Or perhaps you want some matrices (Equation \ref{eqn:example_matrice}),  some te
 Below in Table \ref{tab:example_Karnaugh_Map} is a very complex example of how to do Karnaugh maps I used for an assignment, be very careful when reading the code for this entry as the tikz karnaugh map library accepts the inputs for the cells in a very strange order. There is plenty there to give you some examples to put this in your own report.
 \bigskip
 
-\begin{table}[h!]
+\begin{table}[htbp!]
 	\begin{center}
     \caption{Karnaugh Map}
     \label{tab:example_Karnaugh_Map}
@@ -376,8 +373,7 @@ Below in Table \ref{tab:example_Karnaugh_Map} is a very complex example of how t
     \end{tabular}
   \end{center}
 \end{table}
-
-\pagebreak
+\newpage
 
 
 \section{Tables}
@@ -441,7 +437,8 @@ OK, one last example, Table \ref{tab:system_props}:
     \label{tab:system_props}
 \end{table}
 
-\pagebreak
+\newpage
+
 
 
 \section{MATLAB \& Simulink}
@@ -456,36 +453,36 @@ Or we might include the output of our script as seen in Listing \ref{lis:MATLAB_
 \bigskip
 
 \lstinputlisting[style=Matlab-editor, basicstyle=\color{Black}\ttfamily, label={lis:MATLAB_output_example}, caption={Code Output - Transfer Function and It's Poles}]{MATLAB/Outputs/MATLAB_output_example.txt}
-
 \pagebreak
-
 
 \subsection{Simulink}
 Another nifty thing we can do is include a Simulink model from a saved PDF plus it's output graph, take a wee look at Figure \ref{fig:example_model_graph}:
 \bigskip
-\begin{figure}[h!]
+\begin{figure}[htbp!]
     \centering
     {$\frac{1}{s + 1}$ Transfer Function with a Step Input}\par\medskip
     \includegraphics[width=8.5cm,valign=c]{MATLAB/Simulink/simulink_model.pdf}\hfill\includegraphics[width=8.5cm,valign=c]{MATLAB/Simulink/graph_example.eps}    
     \caption{Task One - System Model (left) and Graph Output (right)}
     \label{fig:example_model_graph}
 \end{figure}
-
-\pagebreak
-
-
-\section{Arduino Code}
-Arduino code is just as easily added, an example is displayed in Listing\ref{lis:arduino_example}. You will find the full code to this project \href{https://github.com/mjennings061/primary-engineer/tree/Wi-Fi}{here}!
-\bigskip
-
-{Arduino WiFi Based Code - NeoPixel File}
-\lstinputlisting[style=Arduino, label={lis:arduino_example},caption={}]{Arduino/neopix.ino}
-
-
 \newpage
 
+
+\section{Arduino}
+Arduino code is just as easily added either within the document or in the appendices. An example is displayed in Appendix \ref{lis:arduino_example}. You will find the full code to this project \href{https://github.com/mjennings061/primary-engineer/tree/Wi-Fi}{here}!
+\bigskip
 
 \newpage
 \setstretch{1}  % Reduce bibliography line spacing
 \printbibliography
+\newpage
+
+%%%%%% APPENDICES %%%%%%
+
+\begin{appendices}
+    % Add each appendix as a new section
+    \section{Arduino Code}
+    {Arduino WiFi Based Code - NeoPixel File}
+    \lstinputlisting[style=Arduino, label={lis:arduino_example},caption={}]{Arduino/neopix.ino}
+\end{appendices}
 \end{document}
