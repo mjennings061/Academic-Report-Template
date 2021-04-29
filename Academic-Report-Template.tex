@@ -40,10 +40,12 @@
 
 %%%%%%%%%% USEFUL SETTINGS %%%%%%%%%%
 %% Change some font sizes, this will override the defaults
-\renewcommand{\ReportTitleFont}{\Huge\rmfamily\bfseries} %% Title Page - Main Title
+% \renewcommand{\familydefault}{cmr}  % choose your font here
+\renewcommand{\ReportTitleFont}{\Huge\bfseries} %% Title Page - Main Title
 \renewcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
-\renewcommand{\ReportSectionFont}{\LARGE\rmfamily\bfseries} %% Section Title
+\renewcommand{\ReportSectionFont}{\LARGE\bfseries} %% Section Title
 \renewcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
+\renewcommand{\ReportEmphasisFont}{\bfseries}
 \renewcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
 
 %% Change the bullets for itemize and rating marker
@@ -229,7 +231,7 @@ Or perhaps you want some matrices (Equation \ref{eqn:example_matrice}),  some te
 \begin{align} %% Use this environment along with &'s to place align all the equations
 	\intertext{Performing a Laplace transform on the general formulas will produce:}
 	\mathcal{L} \{ \dot{X}=AX+BU \} &= sX(s)=AX(s)+BU(s)\nonumber\\\
-	\mathcal{L} \{ Y=CX+DU \}  &= sY(s)=CX(s)+DU(s)\nonumber\
+	\mathcal{L} \{ Y=CX+DU \}  &= sY(s)=CX(s)+DU(s)\nonumber
 	\intertext{The state equation can be rearranged to give:}
 	X(s)&[Is-A]=BU(s)\nonumber\\\
 	X(s)&=[Is-A]^{-1}BU(s)\nonumber\
@@ -411,11 +413,8 @@ Below in Table \ref{tab:example_Truth_Table} is a table example using the truth 
     }
   \end{center}
 \end{table}
-\bigskip
-
 
 OK, one last example, Table \ref{tab:system_props}:
-\bigskip
 
 \begin{table}[h!]
     \centering
@@ -484,8 +483,6 @@ Arduino code is just as easily added, an example is displayed in Listing\ref{lis
 
 
 \newpage
-
-
 
 
 \newpage

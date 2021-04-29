@@ -314,12 +314,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% FONT DEFINITIONS %%%%%%%%%%
-\newcommand{\ReportTitleFont}{\Huge\bfseries}
-\newcommand{\ReportSubTitleFont}{\huge\bfseries}
-\newcommand{\ReportSectionFont}{\LARGE\bfseries}
-\newcommand{\ReportSubSectionFont}{\large\bfseries}
+\newcommand{\ReportTitleFont}{\Huge\bfseries} %% Title Page - Main Title
+\newcommand{\ReportSubTitleFont}{\huge\bfseries} %% Title Page - Sub-Title
+\newcommand{\ReportSectionFont}{\LARGE\bfseries} %% Section Title
+\newcommand{\ReportSubSectionFont}{\large\bfseries} %% SubSection Title
 \newcommand{\ReportEmphasisFont}{\bfseries}
-\newcommand{\FootNoteFont}{\footnotesize\bfseries}
+\newcommand{\FootNoteFont}{\footnotesize} %% Footnotes and Header/Footer
 
 \DeclareCaptionFont{CaptionLabel}{\color{body}\ReportEmphasisFont}
 \DeclareCaptionFont{CaptionText}{\color{body}}
